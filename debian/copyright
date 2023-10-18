@@ -2,6 +2,7 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: stream-shift
 Upstream-Contact: https://github.com/mafintosh/stream-shift/issues
 Source: https://github.com/mafintosh/stream-shift
+ https://registry.npmjs.org/@types/stream-shift
 
 Files: *
 Copyright: 2016 Mathias Buus (@mafintosh)
@@ -9,6 +10,10 @@ License: Expat
 
 Files: debian/*
 Copyright: 2016 Pirate Praveen <praveen@debian.org>
+License: Expat
+
+Files: types-*/*
+Copyright: Microsoft Corporation
 License: Expat
 
 License: Expat

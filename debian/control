@@ -3,11 +3,11 @@ Section: javascript
 Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Pirate Praveen <praveen@debian.org>
-Build-Depends: debhelper-compat (= 12)
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
  , node-tape <!nocheck>
  , node-through2 <!nocheck>
- , pkg-js-tools (>= 0.9.20~)
-Standards-Version: 4.5.0
+Standards-Version: 4.6.0
 Vcs-Browser: https://salsa.debian.org/js-team/node-stream-shift
 Vcs-Git: https://salsa.debian.org/js-team/node-stream-shift.git
 Homepage: https://github.com/mafintosh/stream-shift
@@ -17,7 +17,7 @@ Rules-Requires-Root: no
 Package: node-stream-shift
 Architecture: all
 Depends: ${misc:Depends}
- , nodejs
+Provides: ${nodejs:Provides}
 Multi-Arch: foreign
 Description: returns the next buffer/object in a stream's readable queue
  Node.js is an event-based server-side JavaScript engine.

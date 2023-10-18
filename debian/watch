@@ -1,5 +1,10 @@
-version=3
+version=4
 opts=\
-dversionmangle=s/\+(debian|dfsg|ds|deb)(\.\d+)?$//,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-stream-shift-$1.tar.gz/ \
- https://github.com/mafintosh/stream-shift/tags .*/archive/v?([\d\.]+).tar.gz
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-stream-shift-$1/ \
+ https://github.com/mafintosh/stream-shift/tags .*/archive/.*/v?([\d\.]+).tar.gz group
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=types-stream-shift,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-stream-shift-$1/" \
+ https://registry.npmjs.org/@types/stream-shift https://registry.npmjs.org/@types/stream-shift/-/stream-shift-([\d\.]+)@ARCHIVE_EXT@ group
